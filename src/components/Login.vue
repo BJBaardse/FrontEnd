@@ -18,7 +18,7 @@
           <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 
-        <!-- Remind Passowrd -->
+        <!-- Remind Password -->
 
         <div id="formFooter">
           <a class="underlineHover" ><router-link v-bind:to="'register'">Maak nieuw account </router-link></a><br>
@@ -39,50 +39,6 @@
   import 'bootstrap-vue/dist/bootstrap-vue.css'
   import axios from 'axios';
 
-  // var example2 = new Vue({
-  //   el: '#example-2',
-  //   data: {
-  //     name: 'Vue.js'
-  //   },
-  //   // define methods under the `methods` object
-  //   methods: {
-  //     dopost: function () {
-  //       axios.post(`http://192.168.25.110:8080/Registreren/authentication`, qs.stringify({
-  //         'email': this.email,
-  //         'password': this.password
-  //       }))
-  //         .then(response => {
-  //           alert(response)
-  //         })
-  //         .catch(e => {
-  //           this.errors.push(e)
-  //         })
-  //     }
-  //   }
-  // })
-  // var vm = new Vue({
-  //   el: '#example',
-  //   data: {
-  //     name: 'Vue.js',
-  //     email: '',
-  //     password:''
-  //   },
-  //   // define methods under the `methods` object
-  //   methods: {
-  //     dopost: function () {
-  //       axios.post(`http://192.168.25.110:8080/Registreren/authentication`, qs.stringify({
-  //         'email': this.email,
-  //         'password': this.password
-  //       }))
-  //         .then(response => {
-  //           alert(response)
-  //         })
-  //         .catch(e => {
-  //           this.errors.push(e)
-  //         })
-  //     }
-  //   }
-  // })
   const qs = require('qs');
   export default {
     name: 'app',
@@ -101,6 +57,7 @@
         }))
           .then(response => {
             alert(response)
+            localStorage.setItem('token', response.data)
           })
           .catch(e => {
             this.errors.push(e)
