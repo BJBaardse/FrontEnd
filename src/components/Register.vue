@@ -12,7 +12,7 @@
         </div>
 
         <!-- Login Form -->
-        <form>
+        <form class="" method="post" @submit.prevent="dopost">
           <input type="text" id="Name" class="fadeIn second" name="login" placeholder="Naam">
           <input type="password" id="password" class="fadeIn third" name="login" placeholder="Wachtwoord">
           <input type="text" id="lastname" class="fadeIn second" name="login" placeholder="Achternaam">
@@ -32,6 +32,43 @@
 <script>
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+  import axios from 'axios';
+
+  const qs = require('qs');
+  export default {
+    name: 'app',
+    data () {
+      return {
+        email: '',
+        password: '',
+        Name: '',
+        BSN: '',
+        lastname: '',
+
+        errors: []
+      }
+    },
+    methods: {
+      dopost: function () {
+        axios.post(`http://192.168.25.110:8080/Registreren/authentication/register`, qs.stringify({
+          'email': this.email,
+          'password': this.password,
+          'Name': this.Name,
+          'lastname' : this.lastname,
+          'BSN': this.BSN
+        }))
+          .then(response => {
+            alert(response)
+            localStorage.setItem('token', response.data)
+          })
+          .catch(e => {
+            this.errors.push(e)
+          })
+      }
+    }
+  }
+
 </script>
 <style>
   @import 'Login.css';
