@@ -13,11 +13,11 @@
 
         <!-- Login Form -->
         <form class="" method="post" @submit.prevent="dopost">
-          <input type="text" id="Name" class="fadeIn second" name="login" placeholder="Naam">
-          <input type="password" id="password" class="fadeIn third" name="login" placeholder="Wachtwoord">
-          <input type="text" id="lastname" class="fadeIn second" name="login" placeholder="Achternaam">
-          <input type="text" id="email" class="fadeIn second" name="login" placeholder="Email">
-          <input type="text" id="BSN" class="fadeIn second" name="login" placeholder="BSN">
+          <input type="text" id="Name" class="fadeIn second" name="login" v-model="Name" placeholder="Naam">
+          <input type="password" id="password" class="fadeIn third" name="login"  v-model="password" placeholder="Wachtwoord">
+          <input type="text" id="lastname" class="fadeIn second" name="login" v-model="lastname" placeholder="Achternaam">
+          <input type="text" id="email" class="fadeIn second" name="login" v-model="email" placeholder="Email">
+          <input type="text" id="BSN" class="fadeIn second" name="login" v-model="BSN" placeholder="BSN">
           <input type="submit" class="fadeIn fourth" value="Maak Account">
         </form>
 
