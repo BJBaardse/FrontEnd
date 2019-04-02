@@ -7,9 +7,12 @@ import router from './router'
 import NavBar from '@/components/templates/NavBar'
 import Login from '@/components/Login'
 import mijnautos from '@/components/mijnautos'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
+Vue.use(VueAxios, axios)
 
 Vue.component('NavBar', NavBar);
 Vue.component('login', Login);

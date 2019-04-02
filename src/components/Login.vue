@@ -12,9 +12,9 @@
         </div>
 
         <!-- Login Form -->
-        <form>
-          <input type="text" id="email" class="fadeIn second" name="login" placeholder="username">
-          <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
+        <form class="" method="post" @submit.prevent="dopost">
+          <input type="text" v-model="email" id="email" class="fadeIn second" name="login" placeholder="username">
+          <input type="password" v-model="password" id="password" class="fadeIn third" name="login" placeholder="password">
           <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 
@@ -31,10 +31,81 @@
 
 </template>
 
-<script>
-  import 'bootstrap/dist/css/bootstrap.css'
-  import 'bootstrap-vue/dist/bootstrap-vue.css'
-</script>
 <style>
   @import 'Login.css';
 </style>
+<script>
+  import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap-vue/dist/bootstrap-vue.css'
+  import axios from 'axios';
+
+  // var example2 = new Vue({
+  //   el: '#example-2',
+  //   data: {
+  //     name: 'Vue.js'
+  //   },
+  //   // define methods under the `methods` object
+  //   methods: {
+  //     dopost: function () {
+  //       axios.post(`http://192.168.25.110:8080/Registreren/authentication`, qs.stringify({
+  //         'email': this.email,
+  //         'password': this.password
+  //       }))
+  //         .then(response => {
+  //           alert(response)
+  //         })
+  //         .catch(e => {
+  //           this.errors.push(e)
+  //         })
+  //     }
+  //   }
+  // })
+  // var vm = new Vue({
+  //   el: '#example',
+  //   data: {
+  //     name: 'Vue.js',
+  //     email: '',
+  //     password:''
+  //   },
+  //   // define methods under the `methods` object
+  //   methods: {
+  //     dopost: function () {
+  //       axios.post(`http://192.168.25.110:8080/Registreren/authentication`, qs.stringify({
+  //         'email': this.email,
+  //         'password': this.password
+  //       }))
+  //         .then(response => {
+  //           alert(response)
+  //         })
+  //         .catch(e => {
+  //           this.errors.push(e)
+  //         })
+  //     }
+  //   }
+  // })
+  const qs = require('qs');
+  export default {
+    name: 'app',
+    data () {
+      return {
+        email: '',
+        password: '',
+        errors: []
+      }
+    },
+    methods: {
+      dopost: function () {
+        axios.post(`http://192.168.25.110:8080/Registreren/authentication`, qs.stringify({
+          'email': this.email,
+          'password': this.password
+        }))
+          .then(response => {
+            alert(response)
+          })
+          .catch(e => {
+            this.errors.push(e)
+          })
+      }
+    }
+  }
+</script>
