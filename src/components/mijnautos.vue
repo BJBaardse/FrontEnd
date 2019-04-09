@@ -30,25 +30,27 @@
       </b-list-group>
 
       </div>
-      <div class="col-md-8" >
+      <div class="col-md-8"  v-if="model !== null">
         <h2>Select auto: {{model.license}}<br></h2>
 
-        <div class="form-group" style=" width: 50%; alignment: center"  >
-          <label >Merk:</label> <label style="float: right;">{{model.brand}}</label>
+        <div class="form-group" style=" width: 50%; alignment: center"   >
+          <div v-if="model !== null">
+          <label >Merk:</label> <label  style="float: right;">{{model.brand}}</label>
+        </div>
           <div>
-            <label>Model:</label> <label style="float: right;" >{{model.model}}</label>
+            <label>Model:</label> <label v-if="model.model !== null" style="float: right;" >{{model.model}}</label>
           </div>
           <div>
-            <label>Kenteken:</label> <label style="float: right;">{{model.license}}</label>
+            <label>Kenteken:</label> <label v-if="model.license !== null" style="float: right;">{{model.license}}</label>
           </div>
           <div>
-            <label>Gewicht:</label> <label style="float: right;">{{model.weight}}</label>
+            <label>Gewicht:</label> <label v-if="model.weight !== null" style="float: right;">{{model.weight}}</label>
           </div>
           <div>
-            <label>wielen:</label> <label style="float: right;">{{model.wheels}}</label>
+            <label>wielen:</label> <label v-if="model.wheels !== null" style="float: right;">{{model.wheels}}</label>
           </div>
           <div>
-            <label>Gestolen:</label> <label style="float: right;">{{model.stolen}}</label>
+            <label>Gestolen:</label> <label v-if="model.stolen !== null" style="float: right;">{{model.stolen}}</label>
           </div>
       <div class="col-md-8" v-if="clicked">
         <div style="margin: 5%">
@@ -68,6 +70,8 @@
     </div>
 
     </div>
+
+  </div>
 </template>
 <script>
   import axios from 'axios';
@@ -79,7 +83,8 @@
         autos: [],
         errors: [],
         label: '',
-        clicked: false
+        clicked: false,
+        model: null
       }
     },
     mounted () {
@@ -98,6 +103,7 @@
   methods:{
     loadauto:function(auto){
       this.label = auto.brand.toString();
+      this.model = auto;
       this.clicked = true;
     }
   }
