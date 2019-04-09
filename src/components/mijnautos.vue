@@ -33,24 +33,36 @@
       <div class="col-md-8"  v-if="model !== null">
         <h2>Select auto: {{model.license}}<br></h2>
 
-        <div class="form-group" style=" width: 50%; alignment: center"   >
-          <div v-if="model !== null">
-          <label >Merk:</label> <label  style="float: right;">{{model.brand}}</label>
+        <div class="form-group" style=" width: 50%; alignment: center; text-align: left"   >
+          <div >
+          <label >Merk:</label>
+            <label v-if="model.brand !== null" style="float: right;">{{model.brand}}</label>
+            <label v-else style="float: right;">Unknown</label>
         </div>
           <div>
-            <label>Model:</label> <label v-if="model.model !== null" style="float: right;" >{{model.model}}</label>
+            <label>Model:</label>
+            <label v-if="model.model !== null" style="float: right;" >{{model.model}}</label>
+            <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
-            <label>Kenteken:</label> <label v-if="model.license !== null" style="float: right;">{{model.license}}</label>
+            <label>Kenteken:</label>
+            <label v-if="model.license !== null" style="float: right;">{{model.license}}</label>
+            <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
-            <label>Gewicht:</label> <label v-if="model.weight !== null" style="float: right;">{{model.weight}}</label>
+            <label>Gewicht:</label>
+            <label v-if="model.weight !== null" style="float: right;">{{model.weight}}</label>
+            <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
-            <label>wielen:</label> <label v-if="model.wheels !== null" style="float: right;">{{model.wheels}}</label>
+            <label>wielen:</label>
+            <label v-if="model.wheels !== null" style="float: right;">{{model.wheels}}</label>
+            <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
-            <label>Gestolen:</label> <label v-if="model.stolen !== null" style="float: right;">{{model.stolen}}</label>
+            <label>Gestolen:</label>
+            <label v-if="model.stolen !== null" style="float: right;">{{model.stolen}}</label>
+            <label v-else style="float: right;">Unknown</label>
           </div>
       <div class="col-md-8" v-if="clicked">
         <div style="margin: 5%">
@@ -102,7 +114,6 @@
     },
   methods:{
     loadauto:function(auto){
-      this.label = auto.brand.toString();
       this.model = auto;
       this.clicked = true;
     }
