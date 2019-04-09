@@ -1,11 +1,12 @@
 <template>
   <div>
+    <NavBar></NavBar>
     <h1>Auto's</h1>
     <div class="row">
       <div class="col-md-4">
       <h2>Lijst met auto's:<br></h2>
       <b-list-group style="margin: 5%">
-        <b-list-group-item href="#" active class="flex-column align-items-start" v-for="auto in autos" style="margin-bottom: 10px">
+        <b-list-group-item href="#" active class="flex-column align-items-start" v-for="auto in autos" style="margin-bottom: 10px" v-on:click="loadauto(auto)">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{auto.brand}} {{auto.model}}</h5>
             <small>{{auto.license}}</small>
@@ -29,10 +30,10 @@
       </b-list-group>
 
       </div>
-      <div class="col-md-8" >
+      <div class="col-md-8" v-if="clicked">
         <div style="margin: 5%">
         <button type="button" class="btn btn-primary" style="">Primary</button>
-        <p>lmao</p>
+        <p>{{label}}</p>
         </div>
       </div>
 
@@ -50,7 +51,9 @@
     data () {
       return {
         autos: [],
-        errors: []
+        errors: [],
+        label: '',
+        clicked: false
       }
     },
     mounted () {
@@ -65,6 +68,12 @@
         .catch(function (error) {
           alert("No rights");
         })
+    },
+  methods:{
+    loadauto:function(auto){
+      this.label = auto.brand.toString();
+      this.clicked = true;
     }
+  }
   }
 </script>
