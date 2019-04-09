@@ -60,8 +60,10 @@
             localStorage.setItem('token', response.data);
             this.$router.push('/mijnautos');
           })
-          .catch(e => {
-            this.errors.push(e)
+          .catch(function (error) {
+            if(error.response.status == 403){
+              alert("Incorrect credentials")
+            }
           })
       }
     }
