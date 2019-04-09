@@ -6,7 +6,7 @@
       <div class="col-md-4">
       <h2>Lijst met auto's:<br></h2>
       <b-list-group style="margin: 5%">
-        <b-list-group-item href="#" active class="flex-column align-items-start" v-for="auto in autos" style="margin-bottom: 10px" v-on:click="loadauto(auto)">
+        <b-list-group-item href="#" active class="flex-column align-items-start" v-for="auto in autos" :key="auto.vehicleID" style="margin-bottom: 10px" v-on:click="loadauto(auto)">
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{auto.brand}} {{auto.model}}</h5>
             <small>{{auto.license}}</small>
