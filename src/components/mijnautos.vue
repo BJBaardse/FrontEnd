@@ -30,17 +30,39 @@
 
       </div>
       <div class="col-md-8" >
-        <div style="margin: 5%">
-        <button type="button" class="btn btn-primary" style="">Primary</button>
-        <p>lmao</p>
+        <h2>Select auto: {{model.license}}<br></h2>
+
+        <div class="form-group" style=" width: 50%; alignment: center"  >
+          <label >Merk:</label> <label style="float: right;">{{model.brand}}</label>
+          <div>
+            <label>Model:</label> <label style="float: right;" >{{model.model}}</label>
+          </div>
+          <div>
+            <label>Kenteken:</label> <label style="float: right;">{{model.license}}</label>
+          </div>
+          <div>
+            <label>Gewicht:</label> <label style="float: right;">{{model.weight}}</label>
+          </div>
+          <div>
+            <label>wielen:</label> <label style="float: right;">{{model.wheels}}</label>
+          </div>
+          <div>
+            <label>Gestolen:</label> <label style="float: right;">{{model.stolen}}</label>
+          </div>
         </div>
+
+
       </div>
 
-    </div>
+
 
 
 
   </div>
+
+    </div>
+
+    </div>
 </template>
 <script>
   import axios from 'axios';
