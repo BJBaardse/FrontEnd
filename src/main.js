@@ -9,6 +9,7 @@ import Login from '@/components/Login'
 import mijnautos from '@/components/mijnautos'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import profile from '@/components/Profile'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
@@ -16,7 +17,8 @@ Vue.use(VueAxios, axios)
 
 Vue.component('NavBar', NavBar);
 Vue.component('login', Login);
-Vue.component('mijnautos', mijnautos)
+Vue.component('mijnautos', mijnautos);
+Vue.component('profile', profile);
 
 /* eslint-disable no-new */
 new Vue({
