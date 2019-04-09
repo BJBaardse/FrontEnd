@@ -22,8 +22,8 @@
         <b-nav-item-dropdown right>
           <!-- Using button-content slot -->
           <template slot="button-content"><em>Gebruiker</em></template>
-          <b-dropdown-item href="#">Settings</b-dropdown-item>
-          <b-dropdown-item href="#">Uitloggen</b-dropdown-item>
+          <b-dropdown-item v-bind:to="'profile'">Settings</b-dropdown-item>
+          <b-dropdown-item v-on:click="Logout">Uitloggen</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
@@ -33,4 +33,21 @@
 <script>
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+  export default {
+    name: 'Nav',
+    data () {
+      return {
+        email: '',
+        password: '',
+        errors: []
+      }
+    },
+    methods: {
+      Logout: function () {
+        localStorage.removeItem('token');
+        this.$router.push('/');
+      }
+    }
+  }
 </script>
