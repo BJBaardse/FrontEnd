@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
 import App from './App'
-import router from './router'
+import { router } from './router'
 import NavBar from '@/components/templates/NavBar'
 import Login from '@/components/Login'
 import mijnautos from '@/components/mijnautos'

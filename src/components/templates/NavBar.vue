@@ -7,7 +7,7 @@
 
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
-        <b-nav-item v-bind:to="'autos'">
+        <b-nav-item v-bind:to="'mijnautos'">
           Mijn auto's
         </b-nav-item>
       </b-navbar-nav>

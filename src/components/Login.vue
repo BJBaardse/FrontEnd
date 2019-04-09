@@ -38,6 +38,7 @@
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
   import axios from 'axios';
+  import { router } from "@/router";
 
   const qs = require('qs');
   export default {
@@ -56,8 +57,8 @@
           'password': this.password
         }))
           .then(response => {
-            alert(response)
-            localStorage.setItem('token', response.data)
+            localStorage.setItem('token', response.data);
+            this.$router.push('/mijnautos');
           })
           .catch(e => {
             this.errors.push(e)
