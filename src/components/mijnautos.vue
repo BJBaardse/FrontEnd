@@ -64,11 +64,6 @@
             <label v-if="model.stolen !== null" style="float: right;">{{model.stolen}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
-      <div class="col-md-8" v-if="clicked">
-        <div style="margin: 5%">
-        <button type="button" class="btn btn-primary" style="">Primary</button>
-        <p>{{label}}</p>
-        </div>
 
 
       </div>
