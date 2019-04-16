@@ -4,5 +4,6 @@
   "name": "Voornaam",
   "lastname": "Achternaam",
   "bsn": "BSN",
-  "email": "E-mail"
+  "email": "E-mail",
+  "profileinfo": "Profiel informatie"
 }

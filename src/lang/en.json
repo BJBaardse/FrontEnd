@@ -4,5 +4,6 @@
   "name": "First name",
   "lastname": "Last name",
   "BSN": "BSN",
-  "email": "Email"
+  "email": "Email",
+  "profileinfo": "Profile information"
 }
