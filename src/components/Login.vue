@@ -13,8 +13,8 @@
 
         <!-- Login Form -->
         <form class="" method="post" @submit.prevent="dopost">
-          <input type="text" v-model="email" id="email" class="fadeIn second" name="login" placeholder={{$t('email')}}>
-          <input type="password" v-model="password" id="password" class="fadeIn third" name="login" placeholder={{$t("password")}}>
+          <input type="text" v-model="email" id="email" class="fadeIn second" name="login" placeholder="email">
+          <input type="password" v-model="password" id="password" class="fadeIn third" name="login" placeholder="password">
           <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 
