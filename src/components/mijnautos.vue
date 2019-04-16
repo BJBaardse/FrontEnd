@@ -4,44 +4,45 @@
     <h1>Auto's</h1>
     <div class="row">
       <div class="col-md-4">
-      <h2>Lijst met auto's:<br></h2>
-      <b-list-group style="margin: 5%">
-        <b-list-group-item href="#" active class="flex-column align-items-start" v-for="auto in autos" :key="auto.vehicleID" style="margin-bottom: 10px" v-on:click="loadauto(auto)">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{auto.brand}} {{auto.model}}</h5>
-            <small>{{auto.license}}</small>
-          </div>
-        </b-list-group-item>
-        <!---->
-        <!--<b-list-group-item href="#" active class="flex-column align-items-start">-->
+        <h2>Lijst met auto's:<br></h2>
+        <b-list-group style="margin: 5%">
+          <b-list-group-item href="#" active class="flex-column align-items-start" v-for="auto in autos"
+                             :key="auto.vehicleID" style="margin-bottom: 10px" v-on:click="loadauto(auto)">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{auto.brand}} {{auto.model}}</h5>
+              <small>{{auto.license}}</small>
+            </div>
+          </b-list-group-item>
+          <!---->
+          <!--<b-list-group-item href="#" active class="flex-column align-items-start">-->
           <!--<div class="d-flex w-100 justify-content-between">-->
-            <!--<h5 class="mb-1">List group item heading</h5>-->
-            <!--<small>small tag first</small>-->
+          <!--<h5 class="mb-1">List group item heading</h5>-->
+          <!--<small>small tag first</small>-->
           <!--</div>-->
 
           <!--<p class="mb-1">-->
-            <!--p tag middle-->
+          <!--p tag middle-->
           <!--</p>-->
 
           <!--<small>small tag 2</small>-->
-        <!--</b-list-group-item>-->
+          <!--</b-list-group-item>-->
 
 
-      </b-list-group>
+        </b-list-group>
 
       </div>
-      <div class="col-md-8"  v-if="model !== null">
+      <div class="col-md-8" v-if="model !== null">
         <h2>Select auto: {{model.license}}<br></h2>
 
-        <div class="form-group" style=" width: 50%; alignment: center; text-align: left"   >
-          <div >
-          <label >Merk:</label>
+        <div class="form-group" style=" width: 50%; alignment: center; text-align: left">
+          <div>
+            <label>Merk:</label>
             <label v-if="model.brand !== null" style="float: right;">{{model.brand}}</label>
             <label v-else style="float: right;">Unknown</label>
-        </div>
+          </div>
           <div>
             <label>Model:</label>
-            <label v-if="model.model !== null" style="float: right;" >{{model.model}}</label>
+            <label v-if="model.model !== null" style="float: right;">{{model.model}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
@@ -66,19 +67,15 @@
           </div>
 
 
+        </div>
+
+
       </div>
 
-
-
-
-
-  </div>
-
-    </div>
-
     </div>
 
   </div>
+
 </template>
 <script>
   import axios from 'axios';
