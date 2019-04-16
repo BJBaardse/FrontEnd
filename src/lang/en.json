@@ -18,8 +18,9 @@
   "wheels": "wheels",
   "stolen": "Stolen",
 
-  "createaccount":  "Create new account",
+  "createaccount":  "Create account",
   "passwordforgot": "Forgot Password ",
-  "password": "Password"
+  "password": "Password",
+  "register": "Register"
 
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
 
-  <h1>Registreren</h1>
+  <h1>{{$t('register')}}</h1>
     <div class="wrapper fadeInDown">
       <div id="formContent">
         <!-- Tabs Titles -->
@@ -13,12 +13,12 @@
 
         <!-- Login Form -->
         <form class="" method="post" @submit.prevent="dopost">
-          <input type="text" id="Name" class="fadeIn second" name="login" v-model="Name" placeholder="Naam">
-          <input type="password" id="password" class="fadeIn third" name="login"  v-model="password" placeholder="Wachtwoord">
-          <input type="text" id="lastname" class="fadeIn second" name="login" v-model="lastname" placeholder="Achternaam">
-          <input type="text" id="email" class="fadeIn second" name="login" v-model="email" placeholder="Email">
-          <input type="text" id="BSN" class="fadeIn second" name="login" v-model="BSN" placeholder="BSN">
-          <input type="submit" class="fadeIn fourth" value="Maak Account">
+          <input type="text" id="Name" class="fadeIn second" name="login" v-model="Name" v-bind:placeholder="$t('name')">
+          <input type="password" id="password" class="fadeIn third" name="login"  v-model="password" v-bind:placeholder="$t('password')">
+          <input type="text" id="lastname" class="fadeIn second" name="login" v-model="lastname" v-bind:placeholder="$t('lastname')">
+          <input type="text" id="email" class="fadeIn second" name="login" v-model="email" v-bind:placeholder="$t('email')">
+          <input type="text" id="BSN" class="fadeIn second" name="login" v-model="BSN" v-bind:placeholder="$t('bsn')">
+          <input type="submit" class="fadeIn fourth" v-bind:value="$t('createaccount')">
         </form>
 
         <!-- Remind Passowrd -->

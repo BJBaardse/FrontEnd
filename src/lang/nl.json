@@ -18,9 +18,11 @@
   "wheels": "wielen",
   "stolen": "Gestolen",
 
-  "createaccount":  "Maak nieuw account",
+  "createaccount":  "Maak account",
   "passwordforgot": "Wachtwoord vergeten",
-  "password": "Wachtwoord"
+  "password": "Wachtwoord",
+  "register": "Registreren"
+
 
 
 }
