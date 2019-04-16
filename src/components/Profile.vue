@@ -1,4 +1,7 @@
 <template>
+  <div>
+
+    <NavBar></NavBar>
   <div class="container">
     <div class="header clearfix">
       <nav>
@@ -26,6 +29,7 @@
 
 
   </div> <!-- /container -->
+  </div>
 </template>
 
 <script>
