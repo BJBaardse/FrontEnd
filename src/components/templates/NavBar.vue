@@ -14,9 +14,8 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item-dropdown text="Taal" right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
-          <b-dropdown-item href="#">NL</b-dropdown-item>
+        <b-nav-item-dropdown text="Taal" right v-model="$i18n.locale">
+          <b-dropdown-item v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang" v-on:click="SwitchLang(lang)">{{ lang }}</b-dropdown-item>
         </b-nav-item-dropdown>
 
         <b-nav-item-dropdown right>
@@ -38,15 +37,17 @@
     name: 'Nav',
     data () {
       return {
-        email: '',
-        password: '',
-        errors: []
+        langs: ['nl', 'en']
       }
     },
     methods: {
       Logout: function () {
         localStorage.removeItem('token');
         this.$router.push('/');
+      },
+      SwitchLang: function (lang) {
+        this.$i18n.locale = lang;
+        this.$router.push(this.$route);
       }
     }
   }
