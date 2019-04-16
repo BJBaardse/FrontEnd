@@ -16,6 +16,10 @@
   "license": "License",
   "weight": "Weight",
   "wheels": "wheels",
-  "stolen": "Stolen"
+  "stolen": "Stolen",
+
+  "createaccount":  "Create new account",
+  "Passwordforgot": "Forgot Password ",
+  "password": "Password"
 
 }

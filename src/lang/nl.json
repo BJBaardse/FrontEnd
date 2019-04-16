@@ -16,7 +16,10 @@
   "license": "Kenteken",
   "weight": "Gewicht",
   "wheels": "wielen",
-  "stolen": "Gestolen"
+  "stolen": "Gestolen",
+  "createaccount":  "Maak nieuw account",
+  "Passwordforgot": "Wachtwoord vergeten",
+  "password": "Wachtwoord"
 
 
 }

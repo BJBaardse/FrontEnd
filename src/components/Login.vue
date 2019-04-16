@@ -13,16 +13,16 @@
 
         <!-- Login Form -->
         <form class="" method="post" @submit.prevent="dopost">
-          <input type="text" v-model="email" id="email" class="fadeIn second" name="login" placeholder="username">
-          <input type="password" v-model="password" id="password" class="fadeIn third" name="login" placeholder="password">
+          <input type="text" v-model="email" id="email" class="fadeIn second" name="login" placeholder={{$t('email')}}>
+          <input type="password" v-model="password" id="password" class="fadeIn third" name="login" placeholder={{$t("password")}}>
           <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 
         <!-- Remind Password -->
 
         <div id="formFooter">
-          <a class="underlineHover" ><router-link v-bind:to="'register'">Maak nieuw account </router-link></a><br>
-          <a class="underlineHover" href="www.google.com">Wachtwoord vergeten</a>
+          <a class="underlineHover" ><router-link v-bind:to="'register'">{{$t('createaccount')}} </router-link></a><br>
+          <a class="underlineHover" href="www.google.com">{{$t('passwordforgot')}}</a>
         </div>
 
       </div>
