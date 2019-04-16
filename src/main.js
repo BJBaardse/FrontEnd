@@ -10,6 +10,7 @@ import mijnautos from '@/components/mijnautos'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import profile from '@/components/Profile'
+import i18n from './i18n'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
@@ -25,5 +26,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
+  i18n,
   template: '<App/>'
 })
