@@ -5,5 +5,17 @@
   "lastname": "Last name",
   "BSN": "BSN",
   "email": "Email",
-  "profileinfo": "Profile information"
+  "profileinfo": "Profile information",
+
+  "car": "Car",
+  "cars": "Cars",
+  "carlist": "Car list",
+  "selectcar": "Select car",
+  "Brand": "Brand",
+  "Model": "Model",
+  "license": "License",
+  "weight": "Weight",
+  "wheels": "wheels",
+  "stolen": "Stolen"
+
 }

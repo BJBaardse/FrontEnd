@@ -5,5 +5,18 @@
   "lastname": "Achternaam",
   "bsn": "BSN",
   "email": "E-mail",
-  "profileinfo": "Profiel informatie"
+  "profileinfo": "Profiel informatie",
+
+  "car": "Auto",
+  "cars": "Auto's",
+  "carlist": "Lijst met auto's",
+  "selectcar": "Select auto",
+  "Brand": "Merk",
+  "Model": "Model",
+  "license": "Kenteken",
+  "weight": "Gewicht",
+  "wheels": "wielen",
+  "stolen": "Gestolen"
+
+
 }
