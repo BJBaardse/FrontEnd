@@ -8,7 +8,7 @@
         <ul class="nav nav-pills float-right">
         </ul>
       </nav>
-      <h3 class="text-muted" style="float: none; text-align: center;">Profile informatie</h3>
+      <h3 class="text-muted" style="float: none; text-align: center;">{{$t('profileinfo')}}</h3>
     </div>
 
 
