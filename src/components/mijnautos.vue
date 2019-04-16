@@ -1,10 +1,10 @@
 <template>
   <div>
     <NavBar></NavBar>
-    <h1>Auto's</h1>
+    <h1>{{ $t('cars') }}</h1>
     <div class="row">
       <div class="col-md-4">
-        <h2>Lijst met auto's:<br></h2>
+        <h2>{{$t('carlist')}}:<br></h2>
         <b-list-group style="margin: 5%">
           <b-list-group-item href="#" active class="flex-column align-items-start" v-for="auto in autos"
                              :key="auto.vehicleID" style="margin-bottom: 10px" v-on:click="loadauto(auto)">
@@ -32,11 +32,11 @@
 
       </div>
       <div class="col-md-8" v-if="model !== null">
-        <h2>Select auto: {{model.license}}<br></h2>
+        <h2>{{$t('selectcar')}}: {{model.license}}<br></h2>
 
         <div class="form-group" style=" width: 50%; alignment: center; text-align: left">
           <div>
-            <label>Merk:</label>
+            <label>{{$t('brand')}}:</label>
             <label v-if="model.brand !== null" style="float: right;">{{model.brand}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
@@ -46,22 +46,22 @@
             <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
-            <label>Kenteken:</label>
+            <label>{{$t('license')}}:</label>
             <label v-if="model.license !== null" style="float: right;">{{model.license}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
-            <label>Gewicht:</label>
+            <label>{{$t('weight')}}:</label>
             <label v-if="model.weight !== null" style="float: right;">{{model.weight}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
-            <label>wielen:</label>
+            <label>{{$t('wheels')}}:</label>
             <label v-if="model.wheels !== null" style="float: right;">{{model.wheels}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
-            <label>Gestolen:</label>
+            <label>{{$t('stolen')}}:</label>
             <label v-if="model.stolen !== null" style="float: right;">{{model.stolen}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>

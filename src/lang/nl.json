@@ -1,4 +1,25 @@
 {
   "test": "Test Hello i18n in nederlands!",
-  "test2": "testcase nl"
+  "test2": "testcase nl",
+  "name": "Voornaam",
+  "lastname": "Achternaam",
+  "bsn": "BSN",
+  "email": "E-mail",
+  "profileinfo": "Profiel informatie",
+
+  "car": "Auto",
+  "cars": "Auto's",
+  "carlist": "Lijst met auto's",
+  "selectcar": "Select auto",
+  "Brand": "Merk",
+  "Model": "Model",
+  "license": "Kenteken",
+  "weight": "Gewicht",
+  "wheels": "wielen",
+  "stolen": "Gestolen",
+  "createaccount":  "Maak nieuw account",
+  "Passwordforgot": "Wachtwoord vergeten",
+  "password": "Wachtwoord"
+
+
 }
