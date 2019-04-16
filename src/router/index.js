@@ -4,6 +4,7 @@ import Login from '@/components/Login'
 import mijnautos from '@/components/mijnautos'
 import register from '@/components/Register'
 import profile from '../components/Profile'
+import hello from '../components/HelloI18n'
 
 Vue.use(Router)
 
@@ -15,6 +16,7 @@ export const router = new Router({
     { path: '/mijnautos', component: mijnautos},
     { path: '/register', component: register},
     { path: '/profile', component: profile},
+    { path: '/hello', component: hello},
 
     // otherwise redirect to home
     { path: '*', redirect: '/' }
@@ -22,7 +24,7 @@ export const router = new Router({
 })
 router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
-  const publicPages = ['/login', '/register'];
+  const publicPages = ['/login', '/register', '/hello'];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('token');
 
