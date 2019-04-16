@@ -21,11 +21,10 @@ Vue.component('login', Login);
 Vue.component('mijnautos', mijnautos);
 Vue.component('profile', profile);
 
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   components: { App },
   i18n,
   template: '<App/>'
-})
+}).$mount('#app')
