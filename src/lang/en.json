@@ -1,4 +1,8 @@
 {
   "test": "Test Hello i18n in SFC2!",
-  "test2": "testcase"
+  "test2": "testcase",
+  "name": "First name",
+  "lastname": "Last name",
+  "BSN": "BSN",
+  "email": "Email"
 }

@@ -1,4 +1,8 @@
 {
   "test": "Test Hello i18n in nederlands!",
-  "test2": "testcase nl"
+  "test2": "testcase nl",
+  "name": "Voornaam",
+  "lastname": "Achternaam",
+  "bsn": "BSN",
+  "email": "E-mail"
 }

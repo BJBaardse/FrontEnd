@@ -10,15 +10,15 @@
 
 
     <div class="form-group" style="text-align: left;">
-      <label>Voornaam:</label> <label style="float: right;">{{user.name}}</label>
+      <label>{{ $t('naam') }}:</label> <label style="float: right;">{{user.name}}</label>
       <div>
-        <label>Achternaam:</label> <label style="float: right;">{{user.lastname}}</label>
+        <label>{{ $t('lastname') }}:</label> <label style="float: right;">{{user.lastname}}</label>
       </div>
       <div>
-        <label>BSN:</label> <label style="float: right;">{{user.bsn}}</label>
+        <label>{{ $t('bsn') }}:</label> <label style="float: right;">{{user.bsn}}</label>
       </div>
       <div>
-        <label>Email:</label> <label style="float: right;">{{user.email}}</label>
+        <label>{{ $t('email') }}:</label> <label style="float: right;">{{user.email}}</label>
       </div>
     </div>
 
