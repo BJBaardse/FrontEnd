@@ -65,6 +65,10 @@
             <label v-if="model.stolen !== null" style="float: right;">{{model.stolen}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
+          <div>
+            <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="deleteauto">Verwijderen
+            </button>
+          </div>
 
 
         </div>
@@ -80,9 +84,10 @@
 <script>
   import axios from 'axios';
 
+  const qs = require('qs');
   export default {
     name: 'app',
-    data () {
+    data() {
       return {
         autos: [],
         errors: [],
@@ -91,7 +96,7 @@
         model: null
       }
     },
-    mounted () {
+    mounted() {
       axios.get(`http://192.168.25.110:8080/Registreren/Vehicle`, {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
@@ -104,11 +109,33 @@
           alert("No rights");
         })
     },
-  methods:{
-    loadauto:function(auto){
-      this.model = auto;
-      this.clicked = true;
+    methods: {
+      loadauto: function (auto) {
+        this.model = auto;
+        this.clicked = true;
+      },
+      deleteauto: function () {
+        axios.put(`http://192.168.25.110:8080/Registreren/Vehicle/remove`, qs.stringify({
+            'id': this.model.vehicleID
+          }),
+          {
+            headers: {
+              Authorization: 'Bearer ' + localStorage.getItem('token')
+            }
+          })
+          .then(response => {
+            if (response.status == 200) {
+              alert("Succesful");
+            }
+            location.reload();
+          })
+          .catch(function (error) {
+            if (error.response.status == 403) {
+              alert("Incorrect credentials");
+            }
+          })
+
+      }
     }
-  }
   }
 </script>
