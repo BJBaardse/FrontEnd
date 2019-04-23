@@ -21,8 +21,8 @@
   "createaccount":  "Maak account",
   "passwordforgot": "Wachtwoord vergeten",
   "password": "Wachtwoord",
-  "register": "Registreren"
+  "register": "Registreren",
 
-
-
+  "Registercar": "Auto registeren",
+  "createcar":  "Maak auto"
 }

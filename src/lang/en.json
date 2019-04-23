@@ -21,6 +21,8 @@
   "createaccount":  "Create account",
   "passwordforgot": "Forgot Password ",
   "password": "Password",
-  "register": "Register"
+  "register": "Register",
+  "Registercar": "Car register",
+  "createcar":  "Add car"
 
 }
