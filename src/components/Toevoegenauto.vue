@@ -14,7 +14,7 @@
         <!-- Login Form -->
         <form class="" method="post" @submit.prevent="dopost">
           <input type="text" id="car.license" class="fadeIn second" name="license" v-model="car.license" v-bind:placeholder="$t('license')">
-          <select class="v-select" v-model="car.brand">
+          <select class="form-control" v-model="car.brand" style="margin-left: 8%; width:84%">
             <option v-for="option in brand" v-bind:value="option">
               {{ option }}
             </option>
