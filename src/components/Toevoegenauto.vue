@@ -14,14 +14,16 @@
         <!-- Login Form -->
         <form class="" method="post" @submit.prevent="dopost">
           <input type="text" id="car.license" class="fadeIn second" name="license" v-model="car.license" v-bind:placeholder="$t('license')">
-          <input type="text" id="car.brand" class="fadeIn third" name="brand"  v-model="car.brand" v-bind:placeholder="$t('Brand')">
+          <select class="v-select" v-model="car.brand">
+            <option v-for="option in brand" v-bind:value="option">
+              {{ option }}
+            </option>
+          </select>
           <input type="text" id="car.model" class="fadeIn second" name="model" v-model="car.model" v-bind:placeholder="$t('Model')">
 
-          <select class="form-control" v-model="car.brand" >
-            
-            <option value="1" for>{{brand[1]}}</option>
 
-          </select>
+
+
           <input type="number" id="car.wheels" class="fadeIn second" name="wheels" v-model="car.wheels" v-bind:placeholder="$t('Wheels')">
           <input type="number" id="car.weight" class="fadeIn second" name="weight" v-model="car.weight" v-bind:placeholder="$t('Weight')">
           <input type="submit" class="fadeIn fourth" v-bind:value="$t('createcar')">
