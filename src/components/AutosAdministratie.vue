@@ -83,7 +83,6 @@
 </template>
 <script>
   import axios from 'axios';
-  import jwtcode from 'jwt-decode'
 
   const qs = require('qs');
   export default {
@@ -97,20 +96,35 @@
         model: null
       }
     },
+    mounted() {
 
-    mounted()
-    {
-      axios.get(`http://192.168.25.110:8080/Registreren/Vehicle`, {
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')
-        }
-      })
-        .then(response => {
-          this.autos = response.data;
+      var jwt = jwtcode(localStorage.getItem('token'));
+
+      if(jwt.Roles.toString().includes("ADMINISTRATION")){
+        axios.get(`http://192.168.25.110:8080/Registreren/Vehicle/all`, {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token')
+          }
         })
-        .catch(function (error) {
-          alert("No rights");
+          .then(response => {
+            this.autos = response.data;
+          })
+          .catch(function (error) {
+            alert("No rights");
+          })
+      }else{
+        axios.get(`http://192.168.25.110:8080/Registreren/Vehicle`, {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token')
+          }
         })
+          .then(response => {
+            this.autos = response.data;
+          })
+          .catch(function (error) {
+            alert("No rights");
+          })
+      }
     },
     methods: {
       loadauto: function (auto) {

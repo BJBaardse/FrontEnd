@@ -6,6 +6,7 @@ import register from '@/components/Register'
 import profile from '../components/Profile'
 import hello from '../components/HelloI18n'
 import toevoegenauto from '../components/Toevoegenauto'
+import AutosAdministratie from '../components/AutosAdministratie'
 
 Vue.use(Router)
 
@@ -19,6 +20,7 @@ export const router = new Router({
     { path: '/profile', component: profile},
     { path: '/hello', component: hello},
     {path: "/toevoegenauto",component: toevoegenauto},
+    { path: '/Administration/autos', component: AutosAdministratie},
 
     // otherwise redirect to home
     { path: '*', redirect: '/' }
