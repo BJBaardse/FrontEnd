@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar></NavBar>
-    <h1>{{ $t('cars') }}</h1>
+    <h1>{{ $t('cars') }} + "IDK"</h1>
     <div class="row">
       <div class="col-md-4">
         <h2>{{$t('carlist')}}:<br></h2>
@@ -83,6 +83,7 @@
 </template>
 <script>
   import axios from 'axios';
+  import jwtcode from 'jwt-decode'
 
   const qs = require('qs');
   export default {
