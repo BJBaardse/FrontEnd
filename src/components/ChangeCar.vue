@@ -1,7 +1,7 @@
 <template>
   <div>
 
-  <h1>{{$t('Registercar')}}</h1>
+    <h1>{{$t('Registercar')}}</h1>
     <div class="wrapper fadeInDown">
       <div id="formContent">
         <!-- Tabs Titles -->
@@ -13,16 +13,20 @@
 
         <!-- Login Form -->
         <form class="" method="post" @submit.prevent="dopost">
-          <input type="text" id="car.license" class="fadeIn second" name="license" v-model="car.license" v-bind:placeholder="$t('license')">
+          <input type="text" id="car.license" class="fadeIn second" name="license" v-model="car.license"
+                 v-bind:placeholder="$t('license')">
           <select class="form-control" v-model="car.brand" style="margin-left: 8%; width:84%">
             <option v-for="option in brand" v-bind:value="option">
               {{ option }}
             </option>
           </select>
-          <input type="text" id="car.model" class="fadeIn second" name="model" v-model="car.model" v-bind:placeholder="$t('Model')">
+          <input type="text" id="car.model" class="fadeIn second" name="model" v-model="car.model"
+                 v-bind:placeholder="$t('Model')">
 
-          <input type="number" id="car.wheels" class="fadeIn second" name="wheels" v-model="car.wheels" v-bind:placeholder="$t('Wheels')">
-          <input type="number" id="car.weight" class="fadeIn second" name="weight" v-model="car.weight" v-bind:placeholder="$t('Weight')">
+          <input type="number" id="car.wheels" class="fadeIn second" name="wheels" v-model="car.wheels"
+                 v-bind:placeholder="$t('Wheels')">
+          <input type="number" id="car.weight" class="fadeIn second" name="weight" v-model="car.weight"
+                 v-bind:placeholder="$t('Weight')">
           <input type="submit" class="fadeIn fourth" v-bind:value="$t('Changecar')">
         </form>
 
@@ -39,7 +43,6 @@
   import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 
-
   import axios from 'axios';
 
   const qs = require('qs');
@@ -52,7 +55,7 @@
       title: String
     }
     ,
-    data () {
+    data() {
       return {
         brand: [],
         car:
@@ -81,7 +84,7 @@
         })
 
 
-      this.car =JSON.parse( sessionStorage.getItem("changecar"));
+      this.car = JSON.parse(sessionStorage.getItem("changecar"));
 
     },
     methods: {
@@ -93,12 +96,12 @@
               Authorization: 'Bearer ' + localStorage.getItem('token')
             }
           })
-        .then(response => {
-          if (response.status == 200) {
-            alert("Succesful");
-          }
-          this.$router.push('/mijnautos');
-        })
+          .then(response => {
+            if (response.status == 200) {
+              alert("Succesful");
+            }
+            this.$router.push('/mijnautos');
+          })
           .then(response => {
 
           })
