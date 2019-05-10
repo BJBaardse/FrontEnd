@@ -23,6 +23,12 @@
   "password": "Password",
   "register": "Register",
   "Registercar": "Car register",
-  "createcar":  "Add car"
-
+  "createcar":  "Add car",
+  "AddTarief": "Kilometer rate",
+  "tariefname": "Tarief name",
+  "price": "price",
+  "start": "Start",
+  "Expire": "expire",
+  "AddTarief": "Add rate",
+  "street": "Street"
 }

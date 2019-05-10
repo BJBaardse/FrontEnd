@@ -21,9 +21,6 @@
           </select>
           <input type="text" id="car.model" class="fadeIn second" name="model" v-model="car.model" v-bind:placeholder="$t('Model')">
 
-
-
-
           <input type="number" id="car.wheels" class="fadeIn second" name="wheels" v-model="car.wheels" v-bind:placeholder="$t('Wheels')">
           <input type="number" id="car.weight" class="fadeIn second" name="weight" v-model="car.weight" v-bind:placeholder="$t('Weight')">
           <input type="submit" class="fadeIn fourth" v-bind:value="$t('Changecar')">

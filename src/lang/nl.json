@@ -24,5 +24,12 @@
   "register": "Registreren",
 
   "Registercar": "Auto registeren",
-  "createcar":  "Maak auto"
+  "createcar":  "Maak auto",
+  "Tarief": "Kilometer Tarief",
+  "tariefname": "Tarief naam",
+  "price": "prijs",
+  "start": "Start",
+  "Expire": "vervallen",
+  "AddTarief": "Tarief toevoegen",
+  "street": "Straat"
 }
