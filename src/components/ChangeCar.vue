@@ -41,11 +41,20 @@
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+
+
   import axios from 'axios';
 
   const qs = require('qs');
   export default {
-    name: 'app',
+    name: 'Child',
+    // To use props, they must be declared
+    props: {
+      parentData: Object,
+      stringProp: String,
+      title: String
+    }
+    ,
     data () {
       return {
         brand: [],
@@ -73,6 +82,10 @@
         .catch(function (error) {
           alert("No rights");
         })
+
+
+      this.car =JSON.parse( sessionStorage.getItem("changecar"));
+
     },
     methods: {
       dopost: function () {

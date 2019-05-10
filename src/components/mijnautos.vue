@@ -68,10 +68,14 @@
           <div>
             <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="deleteauto">Verwijderen
             </button>
+
+            <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="ChangeCar">Change
+            </button>
           </div>
 
 
         </div>
+        <udmodal :fname="fullname"></udmodal>
 
 
       </div>
@@ -85,16 +89,22 @@
   import axios from 'axios';
   import jwtcode from 'jwt-decode'
 
+
+
   const qs = require('qs');
   export default {
     name: 'app',
+    components:{
+
+    },
     data() {
       return {
         autos: [],
         errors: [],
         label: '',
         clicked: false,
-        model: null
+        model: null,
+        fullname:"old name"
       }
     },
 
@@ -111,6 +121,9 @@
         .catch(function (error) {
           alert("No rights");
         })
+
+
+
     },
     methods: {
       loadauto: function (auto) {
@@ -138,7 +151,14 @@
             }
           })
 
+      },
+      ChangeCar: function (){
+        if(this.model !== null) {
+          sessionStorage.setItem("changecar", JSON.stringify(this.model));
+          this.$router.push('/ChangeAuto');
+        }
       }
+
     }
   }
 </script>
