@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand v-bind:to="'Login'">Monaco</b-navbar-brand>
+      <b-navbar-brand v-bind:to="'home'">Monaco</b-navbar-brand>
 
       <b-navbar-toggle target="nav_collapse" />
 

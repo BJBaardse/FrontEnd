@@ -9,6 +9,7 @@ import toevoegenauto from '../components/Toevoegenauto'
 import AutosAdministratie from '../components/AutosAdministratie'
 import ChangeAuto from '../components/ChangeCar'
 import toevoegentarief from '../components/ToevoegenTarief'
+import home from '../components/Home'
 
 Vue.use(Router)
 
@@ -16,6 +17,7 @@ export const router = new Router({
   mode: 'history',
   routes: [
     { path: '/', component: Login },
+    { path: "/home",component: home},
     { path: '/login', component: Login },
     { path: '/mijnautos', component: mijnautos},
     { path: '/register', component: register},
@@ -27,7 +29,7 @@ export const router = new Router({
     {path: "/toevoegentarief",component: toevoegentarief},
 
     // otherwise redirect to home
-    { path: '*', redirect: '/' }
+    { path: '*', redirect: '/home' }
   ]
 })
 router.beforeEach((to, from, next) => {

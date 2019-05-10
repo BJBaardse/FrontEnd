@@ -58,7 +58,7 @@
         }))
           .then(response => {
             localStorage.setItem('token', response.data);
-            this.$router.push('/mijnautos');
+            this.$router.push('/home');
           })
           .catch(function (error) {
             if(error.response.status == 403){
