@@ -28,8 +28,19 @@
   "Tarief": "Kilometer Tarief",
   "tariefname": "Tarief naam",
   "price": "prijs",
-  "start": "Start",
+  "start": "Begin",
   "Expire": "vervallen",
   "AddTarief": "Tarief toevoegen",
-  "street": "Straat"
+  "street": "Straat",
+
+  "tarieven": "Tarieven",
+  "list_rates": "Lijst van tarieven",
+  "rate_info": "Tarief informatie",
+  "rate_name": "Naam",
+  "rate_price": "Prijs",
+  "rate_start": "Begin",
+  "rate_expire": "Vervallen",
+  "rate_street": "Straat",
+  "rate_energie": "Energielabel",
+  "rate_rate": "Tarieven"
 }

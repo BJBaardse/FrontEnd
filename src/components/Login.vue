@@ -1,7 +1,7 @@
 <template>
   <div>
 
-  <h1>Login</h1>
+    <h1>Login</h1>
     <div class="wrapper fadeInDown">
       <div id="formContent">
         <!-- Tabs Titles -->
@@ -13,15 +13,19 @@
 
         <!-- Login Form -->
         <form class="" method="post" @submit.prevent="dopost">
-          <input type="text" v-model="email" id="email" class="fadeIn second" name="login" v-bind:placeholder="$t('email')">
-          <input type="password" v-model="password" id="password" class="fadeIn third" name="login" v-bind:placeholder="$t('password')">
+          <input type="text" v-model="email" id="email" class="fadeIn second" name="login"
+                 v-bind:placeholder="$t('email')">
+          <input type="password" v-model="password" id="password" class="fadeIn third" name="login"
+                 v-bind:placeholder="$t('password')">
           <input type="submit" class="fadeIn fourth" value="Log In">
         </form>
 
         <!-- Remind Password -->
 
         <div id="formFooter">
-          <a class="underlineHover" ><router-link v-bind:to="'register'">{{$t('createaccount')}} </router-link></a><br>
+          <a class="underlineHover">
+            <router-link v-bind:to="'register'">{{$t('createaccount')}}</router-link>
+          </a><br>
           <a class="underlineHover" href="www.google.com">{{$t('passwordforgot')}}</a>
         </div>
 
@@ -38,12 +42,12 @@
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
   import axios from 'axios';
-  import { router } from "@/router";
+  import {router} from "@/router";
 
   const qs = require('qs');
   export default {
     name: 'app',
-    data () {
+    data() {
       return {
         email: '',
         password: '',
@@ -58,10 +62,10 @@
         }))
           .then(response => {
             localStorage.setItem('token', response.data);
-            this.$router.push('/mijnautos');
+            this.$router.push('/home');
           })
           .catch(function (error) {
-            if(error.response.status == 403){
+            if (error.response.status == 403) {
               alert("Incorrect credentials")
             }
           })

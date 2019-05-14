@@ -30,5 +30,17 @@
   "start": "Start",
   "Expire": "expire",
   "AddTarief": "Add rate",
-  "street": "Street"
+  "street": "Street",
+
+  "tarieven": "Rates",
+  "list_rates": "List of rates",
+  "rate_info": "Rate information",
+  "rate_name": "Name",
+  "rate_price": "Price",
+  "rate_start": "Start",
+  "rate_expire": "Expire",
+  "rate_street": "Street",
+  "rate_energie": "Energy label",
+  "rate_rate": "Rates"
+
 }

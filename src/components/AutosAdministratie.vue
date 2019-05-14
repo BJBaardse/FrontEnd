@@ -102,7 +102,7 @@
 
       var jwt = jwtcode(localStorage.getItem('token'));
 
-      if(jwt.Roles.toString().includes("ADMINISTRATION")){
+      if (jwt.Roles.toString().includes("ADMINISTRATION")) {
         axios.get(`http://192.168.25.110:8080/Registreren/Vehicle/all`, {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token')
@@ -114,7 +114,7 @@
           .catch(function (error) {
             alert("No rights");
           })
-      }else{
+      } else {
         axios.get(`http://192.168.25.110:8080/Registreren/Vehicle`, {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token')

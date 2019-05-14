@@ -9,25 +9,29 @@ import toevoegenauto from '../components/Toevoegenauto'
 import AutosAdministratie from '../components/AutosAdministratie'
 import ChangeAuto from '../components/ChangeCar'
 import toevoegentarief from '../components/ToevoegenTarief'
+import home from '../components/Home'
+import tarieven from '../components/Tarieven'
 
 Vue.use(Router)
 
 export const router = new Router({
   mode: 'history',
   routes: [
-    { path: '/', component: Login },
-    { path: '/login', component: Login },
-    { path: '/mijnautos', component: mijnautos},
-    { path: '/register', component: register},
-    { path: '/profile', component: profile},
-    { path: '/hello', component: hello},
-    {path: "/toevoegenauto",component: toevoegenauto},
-    { path: '/Administration/autos', component: AutosAdministratie},
-    {path: "/ChangeAuto",component: ChangeAuto},
-    {path: "/toevoegentarief",component: toevoegentarief},
+    {path: '/', component: Login},
+    {path: "/home", component: home},
+    {path: '/login', component: Login},
+    {path: '/mijnautos', component: mijnautos},
+    {path: '/register', component: register},
+    {path: '/profile', component: profile},
+    {path: '/hello', component: hello},
+    {path: "/toevoegenauto", component: toevoegenauto},
+    {path: '/Administration/autos', component: AutosAdministratie},
+    {path: "/ChangeAuto", component: ChangeAuto},
+    {path: "/toevoegentarief", component: toevoegentarief},
+    {path: "/tarieven", component: tarieven},
 
     // otherwise redirect to home
-    { path: '*', redirect: '/' }
+    {path: '*', redirect: '/home'}
   ]
 })
 router.beforeEach((to, from, next) => {
