@@ -12,6 +12,7 @@ import toevoegentarief from '../components/ToevoegenTarief'
 import home from '../components/Home'
 import tarieven from '../components/Tarieven'
 import ChangeTarief from '../components/ChangeTarief'
+import Factuur from '../components/Factuur'
 
 Vue.use(Router)
 
@@ -26,11 +27,12 @@ export const router = new Router({
     {path: '/profile', component: profile},
     {path: '/hello', component: hello},
     {path: "/toevoegenauto", component: toevoegenauto},
-    {path: '/Administration/autos', component: AutosAdministratie},
+    {path: '/administration/autos', component: AutosAdministratie},
     {path: "/ChangeAuto", component: ChangeAuto},
     {path: "/toevoegentarief", component: toevoegentarief},
     {path: "/tarieven", component: tarieven},
-    {path: "/ChangeTarief", component: ChangeTarief},
+    {path: "/changeTarief", component: ChangeTarief},
+    {path: "/factuur", component: Factuur},
 
     // otherwise redirect to home
     {path: '*', redirect: '/home'}
