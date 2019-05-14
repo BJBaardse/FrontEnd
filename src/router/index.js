@@ -11,6 +11,7 @@ import ChangeAuto from '../components/ChangeCar'
 import toevoegentarief from '../components/ToevoegenTarief'
 import home from '../components/Home'
 import tarieven from '../components/Tarieven'
+import ChangeTarief from '../components/ChangeTarief'
 
 Vue.use(Router)
 
@@ -29,6 +30,7 @@ export const router = new Router({
     {path: "/ChangeAuto", component: ChangeAuto},
     {path: "/toevoegentarief", component: toevoegentarief},
     {path: "/tarieven", component: tarieven},
+    {path: "/ChangeTarief", component: ChangeTarief},
 
     // otherwise redirect to home
     {path: '*', redirect: '/home'}

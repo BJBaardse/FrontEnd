@@ -31,6 +31,8 @@
   "Expire": "expire",
   "AddTarief": "Add rate",
   "street": "Street",
+  "Changetarief": "Tarief change",
+  "UpdateTarief": " Update Tarief",
 
   "tarieven": "Rates",
   "list_rates": "List of rates",

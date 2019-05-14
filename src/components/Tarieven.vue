@@ -56,7 +56,7 @@
           </div>
           <div>
             <label>{{$t('rate_street')}}:</label>
-            <label v-if="model.street != null" style="float: right;">{{model.street}}</label>
+            <label v-if="model.street != null" style="float: right;" >{{model.street}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
           <!--<div>-->
@@ -117,6 +117,7 @@
       loadtarief: function (auto) {
         this.model = auto;
         this.clicked = true;
+        sessionStorage.setItem("Tarief", JSON.stringify(auto));
       }
 
     }
