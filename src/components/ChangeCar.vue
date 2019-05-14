@@ -81,7 +81,7 @@
         })
 
 
-      this.car =JSON.parse( sessionStorage.getItem("changecar"));
+      this.car = JSON.parse(sessionStorage.getItem("changecar"));
 
     },
     methods: {
