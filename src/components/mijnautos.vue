@@ -36,7 +36,7 @@
 
         <div class="form-group" style=" width: 50%; alignment: center; text-align: left">
           <div>
-            <label>{{$t('brand')}}:</label>
+            <label>{{$t('Brand')}}:</label>
             <label v-if="model.brand !== null" style="float: right;">{{model.brand}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>

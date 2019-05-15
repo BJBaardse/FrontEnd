@@ -15,7 +15,7 @@
   "Model": "Model",
   "license": "Kenteken",
   "weight": "Gewicht",
-  "wheels": "wielen",
+  "wheels": "Wielen",
   "stolen": "Gestolen",
 
   "createaccount":  "Maak account",
@@ -44,5 +44,14 @@
   "rate_expire": "Vervallen",
   "rate_street": "Straat",
   "rate_energie": "Energielabel",
-  "rate_rate": "Tarieven"
+  "rate_rate": "Tarieven",
+
+  "menu_cars": "Mijn auto's",
+  "menu_tarieven": "Tarieven",
+  "menu_facturen": "Facturen",
+  "menu_lang": "Taal",
+  "menu_user": "Gebruiker",
+  "menu_settings": "Instellingen",
+  "menu_logoff": "Uitloggen"
+
 }

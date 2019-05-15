@@ -43,6 +43,15 @@
   "rate_expire": "Expire",
   "rate_street": "Street",
   "rate_energie": "Energy label",
-  "rate_rate": "Rates"
+  "rate_rate": "Rates",
+
+
+  "menu_cars": "My cars",
+  "menu_tarieven": "Rates",
+  "menu_facturen": "Bills",
+  "menu_lang": "Language",
+  "menu_user": "User",
+  "menu_settings": "Settings",
+  "menu_logoff": "Sign Off"
 
 }

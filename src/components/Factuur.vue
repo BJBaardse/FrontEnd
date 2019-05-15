@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar></NavBar>
-    <h1>{{$t('tarieven')}}</h1>
+    <h1>Facturen</h1>
     <div class="row">
       <div class="col-md-4">
         <h2>{{$t('list_rates')}}:<br></h2>
@@ -28,6 +28,16 @@
           <div>
             <label>Date:</label>
             <label v-if="model.dateReadable != null" style="float: right;">{{dateReadable}}</label>
+            <label v-else style="float: right;">Unknown</label>
+          </div>
+          <div>
+            <label>Kilometer:</label>
+            <label v-if="model.kilometers != null" style="float: right;">{{model.kilometers}} km</label>
+            <label v-else style="float: right;">Unknown</label>
+          </div>
+          <div>
+            <label>Price:</label>
+            <label v-if="model.price != null" style="float: right;">{{model.price}} euro</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
 
