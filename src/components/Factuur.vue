@@ -11,7 +11,7 @@
                   <b-list-group-item href="#" active class="flex-column align-items-start" v-for="bill in bills"
                                      :key="bill.id" style="margin-bottom: 10px" v-on:click="loadbill(bill)">
                     <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">{{bill.date}}</h5>
+                      <h5 class="mb-1">{{ bill.date | moment("dddd, MMMM Do YYYY") }}</h5>
                     </div>
                   </b-list-group-item>
                 </b-list-group>
@@ -54,7 +54,7 @@
 </template>
 <script>
   import axios from 'axios';
-  var moment = require('moment');
+
 
   const qs = require('qs');
   export default {
