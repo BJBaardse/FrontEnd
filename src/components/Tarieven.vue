@@ -59,13 +59,6 @@
             <label v-if="model.street != null" style="float: right;" >{{model.street}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
-          <!--<div>-->
-            <!--<button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="deleteauto">Verwijderen-->
-            <!--</button>-->
-
-            <!--<button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="ChangeCar">Change-->
-            <!--</button>-->
-          <!--</div>-->
 
 
         </div>
@@ -80,7 +73,6 @@
 </template>
 <script>
   import axios from 'axios';
-  import jwtcode from 'jwt-decode'
 
 
   const qs = require('qs');
