@@ -66,8 +66,7 @@
         errors: [],
         label: '',
         clicked: false,
-        model: null,
-        dateReadable: ''
+        model: null
       }
     },
 
@@ -90,7 +89,6 @@
       loadbill: function (bill) {
         this.model = bill;
         this.clicked = true;
-       // this.dateReadable = this.moment(bill.date).format('YYYY-MM-DD');
       }
 
     },
