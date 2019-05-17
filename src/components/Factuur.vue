@@ -27,7 +27,7 @@
         <div class="form-group" style=" width: 50%; alignment: center; text-align: left">
           <div>
             <label>Date:</label>
-            <label v-if="model.dateReadable != null" style="float: right;">{{dateReadable}}</label>
+            <label v-if="mode.date != null" style="float: right;">{{ model.date | moment("dddd, MMMM Do YYYY") }}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
