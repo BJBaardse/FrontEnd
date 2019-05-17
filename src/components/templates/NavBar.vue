@@ -17,7 +17,7 @@
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav>
-          <b-nav-item v-bind:to="'factuur'">
+          <b-nav-item v-if="Checkrole('ADMINISTRATION')" v-bind:to="'factuur'">
             {{$t('menu_facturen')}}
           </b-nav-item>
         </b-navbar-nav>

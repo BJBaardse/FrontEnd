@@ -43,7 +43,7 @@ export const router = new Router({
 router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
   const publicPages = ['/login', '/register', '/hello'];
-  const AdminPages = ['/tarieven', '/ChangeTarief', '/toevoegenauto'];
+  const AdminPages = ['/tarieven', '/ChangeTarief', '/toevoegenauto',"/factuur"];
   const UserPages = ['/mijnautos'];
 
   const authRequired = !publicPages.includes(to.path);
