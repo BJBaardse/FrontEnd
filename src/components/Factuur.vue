@@ -93,6 +93,15 @@
         this.dateReadable = this.moment(bill.date).format('YYYY-MM-DD');
       }
 
+    },
+    computed:{
+      sortedBills: function () {
+        this.bills.sort((a, b) =>{
+          return new Date(a.date) - new Date(b.date);
+        });
+        return this.bills;
+
+      }
     }
   }
 </script>

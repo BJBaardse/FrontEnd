@@ -66,7 +66,6 @@
         this.$router.push(this.$route);
       },
       Checkrole: function (role) {
-
         if(this.role.includes(role)){
           return true;
         }
