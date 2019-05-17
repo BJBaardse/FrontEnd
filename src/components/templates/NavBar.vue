@@ -6,18 +6,18 @@
       <b-navbar-toggle target="nav_collapse" />
 
       <b-collapse is-nav id="nav_collapse">
-        <b-navbar-nav>
+        <b-navbar-nav v-if="Checkrole('USER')">
           <b-nav-item v-bind:to="'mijnautos'">
             {{$t('menu_cars')}}
           </b-nav-item>
         </b-navbar-nav>
-        <b-navbar-nav>
+        <b-navbar-nav v-if="Checkrole('ADMINISTRATION')" >
           <b-nav-item v-bind:to="'tarieven'">
             {{$t('menu_tarieven')}}
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav>
-          <b-nav-item v-bind:to="'factuur'">
+          <b-nav-item v-if="Checkrole('ADMINISTRATION')" v-bind:to="'factuur'">
             {{$t('menu_facturen')}}
           </b-nav-item>
         </b-navbar-nav>
@@ -41,14 +41,21 @@
 <script>
   import 'bootstrap/dist/css/bootstrap.css'
   import 'bootstrap-vue/dist/bootstrap-vue.css'
+  import jwtcode from 'jwt-decode'
 
   export default {
     name: 'Nav',
     data () {
       return {
+        role: "",
         langs: ['nl', 'en']
       }
     },
+    mounted(){
+      const jwt = jwtcode(localStorage.getItem('token'));
+      this.role = jwt.Roles.toString();
+    }
+    ,
     methods: {
       Logout: function () {
         localStorage.removeItem('token');
@@ -57,6 +64,13 @@
       SwitchLang: function (lang) {
         this.$i18n.locale = lang;
         this.$router.push(this.$route);
+      },
+      Checkrole: function (role) {
+
+        if(this.role.includes(role)){
+          return true;
+        }
+        return false;
       }
     }
   }

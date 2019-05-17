@@ -14,6 +14,8 @@ import tarieven from '../components/Tarieven'
 import ChangeTarief from '../components/ChangeTarief'
 import Factuur from '../components/Factuur'
 
+import jwtcode from 'jwt-decode'
+
 Vue.use(Router)
 
 export const router = new Router({
@@ -41,11 +43,35 @@ export const router = new Router({
 router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
   const publicPages = ['/login', '/register', '/hello'];
+  const AdminPages = ['/tarieven', '/ChangeTarief', '/toevoegenauto',"/factuur"];
+  const UserPages = ['/mijnautos'];
+
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('token');
 
+  const AdminPage = AdminPages.includes(to.path);
+
+  const UserPage = UserPages.includes(to.path);
+
+
   if (authRequired && !loggedIn) {
     return next('/login');
+  }
+
+  if(AdminPage){
+    const jwt = jwtcode(localStorage.getItem('token'));
+
+    if (!jwt.Roles.toString().includes("ADMINISTRATION")) {
+      return next('/home');
+    }
+  }
+
+  if(UserPage){
+    const jwt = jwtcode(localStorage.getItem('token'));
+
+    if (!jwt.Roles.toString().includes("USER")) {
+      return next('/home');
+    }
   }
 
   next();
