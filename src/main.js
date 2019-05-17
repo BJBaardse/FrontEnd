@@ -15,6 +15,7 @@ import i18n from './i18n'
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueAxios, axios)
+Vue.use(require('vue-moment'));
 
 Vue.component('NavBar', NavBar);
 Vue.component('login', Login);
