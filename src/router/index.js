@@ -13,6 +13,8 @@ import home from '../components/Home'
 import tarieven from '../components/Tarieven'
 import ChangeTarief from '../components/ChangeTarief'
 import Factuur from '../components/Factuur'
+import FactuurUser from '../components/FactuurUser'
+import Ritten from '../components/Ritten'
 
 import jwtcode from 'jwt-decode'
 
@@ -35,6 +37,8 @@ export const router = new Router({
     {path: "/tarieven", component: tarieven},
     {path: "/changeTarief", component: ChangeTarief},
     {path: "/factuur", component: Factuur},
+    {path: "/factuur_user", component: FactuurUser},
+    {path: "/ritten", component: Ritten},
 
     // otherwise redirect to home
     {path: '*', redirect: '/home'}
@@ -44,7 +48,7 @@ router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
   const publicPages = ['/login', '/register', '/hello'];
   const AdminPages = ['/tarieven', '/ChangeTarief', '/toevoegenauto',"/factuur"];
-  const UserPages = ['/mijnautos'];
+  const UserPages = ['/mijnautos', '/factuur_user', '/ritten'];
 
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('token');

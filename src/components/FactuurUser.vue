@@ -40,6 +40,10 @@
             <label v-if="model.price != null" style="float: right;">{{model.price}} euro</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="billDetails">Details
+            </button>
+          </div>
 
 
         </div>
@@ -71,7 +75,7 @@
     },
 
     mounted() {
-      axios.get(`http://192.168.25.110:8080/Registreren/bill/all`, {
+      axios.get(`http://192.168.25.110:8080/Registreren/bill/user/all`, {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
@@ -89,6 +93,9 @@
       loadbill: function (bill) {
         this.model = bill;
         this.clicked = true;
+      },
+      billDetails: function(){
+        this.$router.push('/ritten');
       }
 
     },
