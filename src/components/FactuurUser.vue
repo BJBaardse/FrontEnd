@@ -95,7 +95,10 @@
         this.clicked = true;
       },
       billDetails: function(){
-        this.$router.push('/ritten');
+        if(this.model !== null) {
+          sessionStorage.setItem("selectedfactuur", JSON.stringify(this.model.rides));
+          this.$router.push('/ritten');
+        }
       }
 
     },

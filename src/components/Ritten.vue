@@ -1,17 +1,19 @@
 <template>
   <div>
     <NavBar></NavBar>
-    <h1>Facturen</h1>
+    <h1>Rides</h1>
     <div class="row">
       <div class="col-md-4">
-        <h2>{{$t('list_rates')}}:<br></h2>
+        <h2>List of rides:<br></h2>
         <div>
           <div>
             <b-list-group style="margin: 5%">
-              <b-list-group-item href="#" active class="flex-column align-items-start" v-for="bill in sortedBills"
-                                 :key="bill.id" style="margin-bottom: 10px" v-on:click="loadbill(bill)">
+              <b-list-group-item href="#" active class="flex-column align-items-start" v-for="ride in rides"
+                                 :key="ride.id" style="margin-bottom: 10px" v-on:click="loadride(ride)">
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1">{{ bill.date | moment("dddd, MMMM Do YYYY") }}</h5>
+                  <h5 class="mb-1">{{ ride.date | moment("hh:mmA | MMMM Do YYYY") }}</h5>
+                  <small>From: {{ride.movements[0].street}} <br>
+                  To: {{ride.movements[ride.movements.length-1].street}}</small>
                 </div>
               </b-list-group-item>
             </b-list-group>
@@ -26,7 +28,13 @@
         <div class="form-group" style=" width: 50%; alignment: center; text-align: left">
           <div>
             <label>Date:</label>
-            <label v-if="model.date != null" style="float: right;">{{ model.date | moment("dddd, MMMM Do YYYY")
+            <label v-if="model.date != null" style="float: right;">{{ model.date | moment("dddd, MMMM Do YYYY ")
+              }}</label>
+            <label v-else style="float: right;">Unknown</label>
+          </div>
+          <div>
+            <label>Time:</label>
+            <label v-if="model.date != null" style="float: right;">{{ model.date | moment("hh:mm A")
               }}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
@@ -40,11 +48,13 @@
             <label v-if="model.price != null" style="float: right;">{{model.price}} euro</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
-          <div class="col-md-4">
-            <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="ChangeCar">Details
-            </button>
-          </div>
-
+          <!--<div class="col-md-6">-->
+            <!--<button type="button" class="btn btn-light btn-outline-dark btn-lg btn-block" v-on:click="showStreets()">Show driven streets-->
+            <!--</button>-->
+          <!--</div>-->
+          <!--<div>-->
+            <!---->
+          <!--</div>-->
 
         </div>
 
@@ -66,7 +76,7 @@
     components: {},
     data() {
       return {
-        bills: [],
+        rides: [],
         errors: [],
         label: '',
         clicked: false,
@@ -75,23 +85,12 @@
     },
 
     mounted() {
-      axios.get(`http://192.168.25.110:8080/Registreren/bill/user/all`, {
-        headers: {
-          Authorization: 'Bearer ' + localStorage.getItem('token')
-        }
-      })
-        .then(response => {
-          this.bills = response.data;
-        })
-        .catch(function (error) {
-          alert("No rights");
-        })
-
+      this.rides = JSON.parse(sessionStorage.getItem("selectedfactuur"));
 
     },
     methods: {
-      loadbill: function (bill) {
-        this.model = bill;
+      loadride: function (ride) {
+        this.model = ride;
         this.clicked = true;
       }
 
@@ -102,6 +101,9 @@
           return new Date(a.date) - new Date(b.date);
         });
         return this.bills;
+
+      },
+      showStreets: function () {
 
       }
     }
