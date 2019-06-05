@@ -49,13 +49,50 @@
             <label v-if="model.price != null" style="float: right;">{{model.price}} euro</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
-          <!--<div class="col-md-6">-->
-            <!--<button type="button" class="btn btn-light btn-outline-dark btn-lg btn-block" v-on:click="showStreets()">Show driven streets-->
-            <!--</button>-->
-          <!--</div>-->
-          <!--<div>-->
-            <!---->
-          <!--</div>-->
+          <div class="col-md-6">
+            <button type="button" class="btn btn-light btn-outline-dark btn-lg btn-block" v-on:click="showStreets()">
+              Show driven streets
+            </button>
+          </div>
+          <div v-show="detailstoggle">
+            <div class="container">
+              <div class="row">
+                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                  <thead>
+                  <tr>
+                    <th>Street</th>
+                    <th>Distance</th>
+                    <th>Base price</th>
+                    <th>Additional price</th>
+                    <!--<th>Total price</th>-->
+                  </tr>
+                  </thead>
+                  <tfoot>
+                  <tr>
+                    <th>Street</th>
+                    <th>Distance</th>
+                    <th>Base price /km</th>
+                    <th>Additional price</th>
+                    <!--<th>Total price</th>-->
+                  </tr>
+                  </tfoot>
+                  <tbody>
+                    <!--<div >-->
+                  <tr v-for="movement in movements">
+                    <td>{{movement.street}}</td>
+                    <td>{{movement.kilometers}}km</td>
+                    <td>{{movement.baseTarief.price}},- /km</td>
+                    <td v-if="movement.additionTarief != null">{{movement.additionTarief.price}}%</td>
+                    <td v-else>0%</td>
+                    <!--<td></td>-->
+                  </tr>
+                  <!--</div>-->
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
 
         </div>
 
@@ -81,7 +118,9 @@
         errors: [],
         label: '',
         clicked: false,
-        model: null
+        model: null,
+        detailstoggle: false,
+        movements: []
       }
     },
 
@@ -92,9 +131,12 @@
     methods: {
       loadride: function (ride) {
         this.model = ride;
+        this.movements = ride.movements
         this.clicked = true;
+      },
+      showStreets: function () {
+        this.detailstoggle = !this.detailstoggle;
       }
-
     },
     computed: {
       sortedBills: function () {
@@ -103,10 +145,8 @@
         });
         return this.bills;
 
-      },
-      showStreets: function () {
-
       }
+
     }
   }
 </script>
