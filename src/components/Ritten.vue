@@ -23,7 +23,7 @@
 
       </div>
       <div class="col-md-8" v-if="model !== null">
-        <h2>Bill:<br></h2>
+        <h2>Ride:<br></h2>
 
         <div class="form-group" style=" width: 50%; alignment: center; text-align: left">
           <div>
