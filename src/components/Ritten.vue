@@ -13,7 +13,8 @@
                 <div class="d-flex w-100 justify-content-between">
                   <h5 class="mb-1">{{ ride.date | moment("hh:mmA | MMMM Do YYYY") }}</h5>
                   <small>From: {{ride.movements[0].street}} <br>
-                  To: {{ride.movements[ride.movements.length-1].street}}</small>
+                    To: {{ride.movements[ride.movements.length-1].street}}
+                  </small>
                 </div>
               </b-list-group-item>
             </b-list-group>

@@ -97,7 +97,7 @@
       billDetails: function(){
         if(this.model !== null) {
           sessionStorage.setItem("selectedfactuur", JSON.stringify(this.model.rides));
-          this.$router.push('/factuur_user/ritten');
+          this.$router.push('/ritten');
         }
       }
 

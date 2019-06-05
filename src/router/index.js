@@ -38,7 +38,7 @@ export const router = new Router({
     {path: "/changeTarief", component: ChangeTarief},
     {path: "/factuur", component: Factuur},
     {path: "/factuur_user", component: FactuurUser},
-    {path: "/factuur_user/ritten", component: Ritten},
+    {path: "/ritten", component: Ritten},
 
     // otherwise redirect to home
     {path: '*', redirect: '/home'}
@@ -48,7 +48,7 @@ router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
   const publicPages = ['/login', '/register', '/hello'];
   const AdminPages = ['/tarieven', '/ChangeTarief', '/toevoegenauto',"/factuur"];
-  const UserPages = ['/mijnautos', '/factuur_user', '/factuur_user/ritten'];
+  const UserPages = ['/mijnautos', '/factuur_user', '/ritten'];
 
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('token');
