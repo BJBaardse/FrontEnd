@@ -54,7 +54,7 @@
               Show driven streets
             </button>
           </div>
-          <div v-show="detailstoggle">
+          <div v-show="detailstoggle" style="margin-top: 3%;">
             <div class="container">
               <div class="row">
                 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
