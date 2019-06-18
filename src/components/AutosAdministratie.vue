@@ -68,6 +68,9 @@
           <div>
             <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="deleteauto">Verwijderen
             </button>
+
+            <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="ChangeCar">Change
+            </button>
           </div>
 
 
@@ -172,6 +175,12 @@
             alert("No rights");
           })
 
+      },
+      ChangeCar: function (){
+        if(this.model !== null) {
+          sessionStorage.setItem("changecar", JSON.stringify(this.model));
+          this.$router.push('/ChangeAuto');
+        }
       }
     }
   }

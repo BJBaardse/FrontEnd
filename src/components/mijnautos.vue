@@ -66,16 +66,15 @@
             <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
-            <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="deleteauto">Verwijderen
-            </button>
+<!--            <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="deleteauto">Verwijderen-->
+<!--            </button>-->
 
-            <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="ChangeCar">Change
+            <button type="button" class="btn btn-secondary btn-lg btn-block" v-on:click="GenerateFactuur()">Generate bill
             </button>
           </div>
 
 
         </div>
-        <udmodal :fname="fullname"></udmodal>
 
 
       </div>
@@ -152,13 +151,33 @@
           })
 
       },
-      ChangeCar: function (){
-        if(this.model !== null) {
+      ChangeCar: function () {
+        if (this.model !== null) {
           sessionStorage.setItem("changecar", JSON.stringify(this.model));
           this.$router.push('/ChangeAuto');
         }
-      }
+      },
+      GenerateFactuur: function () {
+        console.log(this.model)
+        axios.post(`http://192.168.25.110:8080/Registreren/bill/generate/` + this.model.vehicleID,
+          {
+            headers: {
+              Authorization: 'Bearer ' + localStorage.getItem('token')
+            }
+          })
+          .then(response => {
+            if (response.status == 200) {
+              alert("Succesful");
+            }
 
+          })
+          .then(response => {
+
+          })
+          .catch(e => {
+            this.errors.push(e)
+          })
+      }
     }
   }
 </script>
