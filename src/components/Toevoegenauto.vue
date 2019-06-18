@@ -13,8 +13,11 @@
 
         <!-- Login Form -->
         <form class="" method="post" @submit.prevent="dopost">
-          <input type="number" id="bsn" class="fadeIn second" name="model" v-model="bsn"
-                 v-bind:placeholder="$t('BSN')">
+          <div><label>{{$t('BSN')}}:</label>
+
+            <input type="number" id="bsn" class="fadeIn second" name="model" v-model="bsn"
+                   v-bind:placeholder="$t('BSN')"></div>
+
           <input type="text" id="car.license" class="fadeIn second" name="license" v-model="car.license"
                  v-bind:placeholder="$t('license')">
           <select class="form-control" v-model="car.brand" style="margin-left: 8%; width:84%">

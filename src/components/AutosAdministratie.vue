@@ -5,6 +5,10 @@
     <div class="row">
       <div class="col-md-4">
         <h2>{{$t('carlist')}}:<br></h2>
+        <div><label>{{$t('license')}}:</label>
+
+          <input type="text" id="bsn" class="form-control"  name="model" v-model="license"
+                 v-on:keyup.enter="GetCars()" v-bind:placeholder="$t('license')"></div>
         <b-list-group style="margin: 5%">
           <b-list-group-item href="#" active class="flex-column align-items-start" v-for="auto in autos"
                              :key="auto.vehicleID" style="margin-bottom: 10px" v-on:click="loadauto(auto)">
@@ -98,7 +102,8 @@
         errors: [],
         label: '',
         clicked: false,
-        model: null
+        model: null,
+        license:""
       }
     },
     mounted() {
@@ -158,14 +163,29 @@
           })
 
       },
-      GetCars: function (licence) {
+      GetCars: function () {
+        if(this.license.length <=0){
+
+          axios.get(`http://192.168.25.110:8080/Registreren/Vehicle/all`, {
+            headers: {
+              Authorization: 'Bearer ' + localStorage.getItem('token')
+            }
+          })
+            .then(response => {
+              this.autos = response.data;
+            })
+            .catch(function (error) {
+              alert("No rights");
+            })
+
+        }
 
         axios.get(`http://192.168.25.110:8080/Registreren/Vehicle/license`, {
           headers: {
             Authorization: 'Bearer ' + localStorage.getItem('token')
           },
           params:{
-            license: licence
+            license: this.license
           }
         })
           .then(response => {
