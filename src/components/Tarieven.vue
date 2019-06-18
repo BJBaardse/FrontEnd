@@ -11,7 +11,7 @@
               <div>
                 <b-list-group style="margin: 5%">
                   <b-list-group-item href="#" active class="flex-column align-items-start" v-for="tarief in tarieven"
-                                     :key="tarief.id" style="margin-bottom: 10px" v-on:click="loadtarief(tarief)">
+                                     :key="tarief.id" style="margin-bottom: 10px" v-on:click="loadtarief(tarief)" v-if="tarief.street != null">
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1">{{tarief.name}} </h5>
                       <div v-if="tarief.street != null">
@@ -22,7 +22,22 @@
                 </b-list-group>
               </div>
             </b-tab>
-            <b-tab v-bind:title="$t('rate_energie')"><p>I'm the second tab</p></b-tab>
+            <b-tab v-bind:title="$t('rate_energie')"><p>I'm the second tab</p>
+              <div>
+                <b-list-group style="margin: 5%">
+                  <b-list-group-item href="#" active class="flex-column align-items-start" v-for="tarief in tarieven"
+                                     :key="tarief.id" style="margin-bottom: 10px" v-on:click="loadtarief(tarief)" v-if="tarief.energy != null">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">{{tarief.name}} </h5>
+                      <div v-if="tarief.energy != null">
+                        <small>{{tarief.energy}}</small>
+                      </div>
+                    </div>
+                  </b-list-group-item>
+                </b-list-group>
+              </div>
+            </b-tab>
+
             <b-tab v-bind:title="$t('rate_rate')" disabled></b-tab>
           </b-tabs>
         </div>
@@ -39,24 +54,40 @@
             <label v-if="model.name != null" style="float: right;">{{model.name}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
-          <div>
+          <div v-if="model.street != null" >
             <label>{{$t('rate_price')}}:</label>
-            <label v-if="model.price != null" style="float: right;">{{model.price}}</label>
+            <label v-if="model.price != null" style="float: right;">{{model.price}} %</label>
+            <label v-else style="float: right;">Unknown</label>
+          </div>
+          <div v-else-if="model.energy != null" >
+            <label>{{$t('rate_price')}}:</label>
+            <label v-if="model.price != null" style="float: right;"> € {{model.price}} </label>
+            <label v-else style="float: right;">Unknown</label>
+          </div>
+          <div v-else >
+            <label>{{$t('rate_price')}}:</label>
+            <label v-if="model.price != null" style="float: right;">{{model.price}} </label>
             <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
             <label>{{$t('rate_start')}}:</label>
-            <label v-if="model.start != null" style="float: right;">{{model.start}}</label>
+            <label v-if="model.start != null" style="float: right;">{{model.start | moment("dddd, MMMM Do YYYY")}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
             <label>{{$t('rate_expire')}}:</label>
-            <label v-if="model.expire != null" style="float: right;">{{model.expire}}</label>
+            <label v-if="model.expire != null" style="float: right;">{{model.expire | moment("dddd, MMMM Do YYYY")}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
-          <div>
+          <div v-if="model.street != null">
             <label>{{$t('rate_street')}}:</label>
             <label v-if="model.street != null" style="float: right;" >{{model.street}}</label>
+            <label v-else style="float: right;">Unknown</label>
+          </div>
+
+          <div v-if="model.energy != null">
+            <label>{{$t('rate_energie')}}:</label>
+            <label v-if="model.energy != null" style="float: right;" >{{model.energy}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
 

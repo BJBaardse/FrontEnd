@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <NavBar></NavBar>
     <h1>{{$t('Tarief')}}</h1>
     <div class="wrapper fadeInDown">
       <div id="formContent">
@@ -34,6 +34,9 @@
           <input type="text" id="street" class="fadeIn second" name="name" v-model="street"
                  v-bind:placeholder="$t('street')">
 
+          <input type="text" id="Engery" class="fadeIn second" name="name" v-model="energy"
+                 v-bind:placeholder="$t('energy')">
+
           <input type="submit" class="fadeIn fourth" v-bind:value="$t('AddTarief')">
         </form>
 
@@ -65,7 +68,7 @@
             "expire": 0,
           },
         "street": "",
-        "Engery": "",
+        "energy": "",
         errors: []
       }
     },
@@ -89,6 +92,9 @@
         if (!this.street.length <= 0) {
           url = url + "/street"
           this.tarief.street = this.street;
+        }else if (!this.energy.length <= 0) {
+          url = url + "/engery"
+          this.tarief.energy = this.energy;
         }
         axios.put(url,
           this.tarief,
