@@ -75,9 +75,12 @@
     },
 
     mounted() {
-      axios.get(`http://192.168.25.110:8080/Registreren/bill/user/all`, {
+      axios.get(`http://192.168.25.110:8080/Registreren/bill/user/date`, {
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
+        },
+        params:{
+          date: new Date().getTime()
         }
       })
         .then(response => {

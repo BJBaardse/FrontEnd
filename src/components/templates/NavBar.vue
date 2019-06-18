@@ -17,14 +17,20 @@
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav>
-          <b-nav-item v-if="Checkrole('ADMINISTRATION')" v-bind:to="'factuur'">
-            {{$t('menu_facturen')}}
+          <b-nav-item v-if="Checkrole('ADMINISTRATION')" v-bind:to="'administration/autos'">
+            {{$t('menu_car')}}
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav>
           <b-nav-item v-if="Checkrole('USER')" v-bind:to="'factuur_user'">
             {{$t('menu_facturen')}}
           </b-nav-item>
+
+          <b-navbar-nav>
+            <b-nav-item v-if="Checkrole('ADMINISTRATION')" v-bind:to="'factuur'">
+              {{$t('menu_facturen')}}
+            </b-nav-item>
+          </b-navbar-nav>
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">

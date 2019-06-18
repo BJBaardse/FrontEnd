@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar></NavBar>
-    <h1>{{ $t('cars') }} + "IDK"</h1>
+    <h1>{{ $t('cars') }}</h1>
     <div class="row">
       <div class="col-md-4">
         <h2>{{$t('carlist')}}:<br></h2>
@@ -152,6 +152,24 @@
             if (error.response.status == 403) {
               alert("Incorrect credentials");
             }
+          })
+
+      },
+      GetCars: function (licence) {
+
+        axios.get(`http://192.168.25.110:8080/Registreren/Vehicle/license`, {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token')
+          },
+          params:{
+            license: licence
+          }
+        })
+          .then(response => {
+            this.autos = response.data;
+          })
+          .catch(function (error) {
+            alert("No rights");
           })
 
       }
