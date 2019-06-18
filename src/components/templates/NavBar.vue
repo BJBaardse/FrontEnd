@@ -16,11 +16,7 @@
             {{$t('menu_tarieven')}}
           </b-nav-item>
         </b-navbar-nav>
-        <b-navbar-nav>
-          <b-nav-item v-if="Checkrole('ADMINISTRATION')" v-bind:to="'administration/autos'">
-            {{$t('menu_car')}}
-          </b-nav-item>
-        </b-navbar-nav>
+
         <b-navbar-nav>
           <b-nav-item v-if="Checkrole('USER')" v-bind:to="'factuur_user'">
             {{$t('menu_facturen')}}
@@ -32,6 +28,18 @@
             </b-nav-item>
           </b-navbar-nav>
         </b-navbar-nav>
+        <b-navbar-nav>
+          <b-nav-item v-if="Checkrole('ADMINISTRATION')" v-bind:to="'administration/autos'">
+            {{$t('menu_car')}}
+          </b-nav-item>
+        </b-navbar-nav>
+        <b-navbar-nav>
+          <b-nav-item v-if="Checkrole('ADMINISTRATION')" v-bind:to="'toevoegenauto'">
+            {{$t('menu_Addcar')}}
+          </b-nav-item>
+        </b-navbar-nav>
+
+
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown v-bind:text="$t('menu_lang')" right v-model="$i18n.locale">

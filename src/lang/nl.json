@@ -53,6 +53,7 @@
   "menu_user": "Gebruiker",
   "menu_settings": "Instellingen",
   "menu_logoff": "Uitloggen",
-  "menu_car": "Auto"
+  "menu_car": "Auto",
+  "menu_Addcar": "Add auto"
 
 }

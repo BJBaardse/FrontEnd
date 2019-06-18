@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <NavBar></NavBar>
     <h1>{{$t('Registercar')}}</h1>
     <div class="wrapper fadeInDown">
       <div id="formContent">
@@ -13,6 +13,8 @@
 
         <!-- Login Form -->
         <form class="" method="post" @submit.prevent="dopost">
+          <input type="number" id="bsn" class="fadeIn second" name="model" v-model="bsn"
+                 v-bind:placeholder="$t('BSN')">
           <input type="text" id="car.license" class="fadeIn second" name="license" v-model="car.license"
                  v-bind:placeholder="$t('license')">
           <select class="form-control" v-model="car.brand" style="margin-left: 8%; width:84%">
@@ -60,6 +62,7 @@
             "model": '',
             "brand": ''
           },
+        bsn: 0,
         errors: []
       }
     },
@@ -78,7 +81,7 @@
     },
     methods: {
       dopost: function () {
-        axios.post(`http://192.168.25.110:8080/Registreren/Vehicle/ADD`,
+        axios.post(`http://192.168.25.110:8080/Registreren/Vehicle/ADD/` + this.bsn,
           this.car,
           {
             headers: {

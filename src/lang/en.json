@@ -53,5 +53,6 @@
   "menu_user": "User",
   "menu_settings": "Settings",
   "menu_logoff": "Sign Off",
-  "menu_car": "Cars"
+  "menu_car": "Cars",
+  "menu_Addcar": "Add Car"
 }
