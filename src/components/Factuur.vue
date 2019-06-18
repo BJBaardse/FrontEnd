@@ -2,6 +2,13 @@
   <div>
     <NavBar></NavBar>
     <h1>Facturen</h1>
+    <div>
+      <select v-on:change="changeYear($event)">
+        <option v-for="y in yearList"
+                :value="y.year">  {{y.year}}
+        </option>
+      </select>
+    </div>
     <div class="row">
       <div class="col-md-4">
         <h2>{{$t('list_rates')}}:<br></h2>
@@ -62,6 +69,7 @@
     components: {},
     data() {
       return {
+        yearList:[{ year: "2019"},{ year: "2018"}, {year: "2017"}] ,
         bills: [],
         errors: [],
         label: '',
@@ -71,7 +79,10 @@
     },
 
     mounted() {
-      axios.get(`http://192.168.25.110:8080/Registreren/bill/all`, {
+      axios.get(`http://192.168.25.110:8080/Registreren/bill/date`,{
+        params:{
+          date: new Date('2019').getTime()
+        },
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
         }
@@ -89,6 +100,23 @@
       loadbill: function (bill) {
         this.model = bill;
         this.clicked = true;
+      },
+      changeYear: function (event) {
+        const year = event.target.value;
+        axios.get(`http://192.168.25.110:8080/Registreren/bill/date`, {
+          params:{
+          date: new Date(year).getTime()
+        },
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('token')
+          }
+        })
+          .then(response => {
+            this.bills = response.data;
+          })
+          .catch(function (error) {
+            alert("No rights");
+          })
       }
 
     },
