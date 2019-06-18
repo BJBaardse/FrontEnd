@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar></NavBar>
-    <h1>Facturen</h1>
+    <h1>{{ $t('menu_facturen') }}</h1>
     <div>
       <select v-on:change="changeYear($event)">
         <option v-for="y in yearList"
