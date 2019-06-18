@@ -54,9 +54,19 @@
             <label v-if="model.name != null" style="float: right;">{{model.name}}</label>
             <label v-else style="float: right;">Unknown</label>
           </div>
-          <div>
+          <div v-if="model.street != null" >
             <label>{{$t('rate_price')}}:</label>
-            <label v-if="model.price != null" style="float: right;">{{model.price}}</label>
+            <label v-if="model.price != null" style="float: right;">{{model.price}} %</label>
+            <label v-else style="float: right;">Unknown</label>
+          </div>
+          <div v-else-if="model.energy != null" >
+            <label>{{$t('rate_price')}}:</label>
+            <label v-if="model.price != null" style="float: right;"> € {{model.price}} </label>
+            <label v-else style="float: right;">Unknown</label>
+          </div>
+          <div v-else >
+            <label>{{$t('rate_price')}}:</label>
+            <label v-if="model.price != null" style="float: right;">{{model.price}} </label>
             <label v-else style="float: right;">Unknown</label>
           </div>
           <div>
