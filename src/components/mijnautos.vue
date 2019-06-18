@@ -168,14 +168,20 @@
           .then(response => {
             if (response.status == 200) {
               alert("Succesful");
+            }else {
+              if (response.status != 200){
+                alert("No data found for car")
+              }
             }
 
           })
           .then(response => {
 
+
           })
           .catch(e => {
             this.errors.push(e)
+            alert("No data found")
           })
       }
     }
