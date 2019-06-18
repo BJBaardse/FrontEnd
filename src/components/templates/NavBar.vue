@@ -11,9 +11,15 @@
             {{$t('menu_cars')}}
           </b-nav-item>
         </b-navbar-nav>
+
         <b-navbar-nav v-if="Checkrole('ADMINISTRATION')" >
           <b-nav-item v-bind:to="'tarieven'">
             {{$t('menu_tarieven')}}
+          </b-nav-item>
+        </b-navbar-nav>
+        <b-navbar-nav v-if="Checkrole('ADMINISTRATION')" >
+          <b-nav-item v-bind:to="'toevoegentarief'">
+            {{$t('menu_Addrate')}}
           </b-nav-item>
         </b-navbar-nav>
 

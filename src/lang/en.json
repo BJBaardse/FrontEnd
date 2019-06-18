@@ -54,5 +54,6 @@
   "menu_settings": "Settings",
   "menu_logoff": "Sign Off",
   "menu_car": "Cars",
-  "menu_Addcar": "Add Car"
+  "menu_Addcar": "Add Car",
+  "menu_Addrate": "Add rate"
 }
