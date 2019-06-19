@@ -55,6 +55,7 @@
   import axios from 'axios';
 
   const qs = require('qs');
+  const moment = require('moment');
   export default {
     name: 'app',
     data() {
@@ -96,6 +97,10 @@
           url = url + "/engery"
           this.tarief.energy = this.energy;
         }
+
+        this.tarief.start = moment(this.tarief.start).format();
+        this.tarief.expire = moment(this.tarief.expire).format();
+
         axios.put(url,
           this.tarief,
           {
