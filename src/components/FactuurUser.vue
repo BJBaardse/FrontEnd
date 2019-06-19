@@ -31,7 +31,11 @@
         <h2>Bill:<br></h2>
 
         <div class="form-group" style=" width: 50%; alignment: center; text-align: left">
-          <div>
+          <div> 
+		<label>Car:</label>
+		<label style="float: right;"> {{ model.vehicle.license }}</label>
+		</div>
+		<div>
             <label>Date:</label>
             <label v-if="model.date != null" style="float: right;">{{ model.date | moment("dddd, MMMM Do YYYY")
               }}</label>
