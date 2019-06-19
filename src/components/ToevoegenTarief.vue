@@ -94,7 +94,7 @@
           url = url + "/street"
           this.tarief.street = this.street;
         }else if (!this.energy.length <= 0) {
-          url = url + "/engery"
+          url = url + "/enegry"
           this.tarief.energy = this.energy;
         }
 
