@@ -22,7 +22,7 @@
                 </b-list-group>
               </div>
             </b-tab>
-            <b-tab v-bind:title="$t('rate_energie')"><p>I'm the second tab</p>
+            <b-tab v-bind:title="$t('rate_energie')">
               <div>
                 <b-list-group style="margin: 5%">
                   <b-list-group-item href="#" active class="flex-column align-items-start" v-for="tarief in tarieven"
